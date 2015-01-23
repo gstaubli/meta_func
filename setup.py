@@ -8,5 +8,8 @@ setup(
     packages=['meta_func'],
     url='http://www.github.com/gstaubli/meta_func',
     description='Python decorator function to track metadata on function calls',
-    long_description=open('README.md').read()
+    long_description=open('README.md').read(),
+    install_requires=[
+        "decorator"
+    ]
 )
