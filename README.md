@@ -23,3 +23,6 @@ Decorate a function with `@meta_func()` passing the optional keyword argument ig
 
 # Compatibility
 Tested compatible with Py2.7 and Py3, but this code is provided as is with no warranty or guarantee, implied or explicit.
+
+# More Information
+Please see my blog post here: http://garrens.com/blog/2015/01/23/metadata-for-functions-python-decorator/
