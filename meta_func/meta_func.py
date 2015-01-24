@@ -2,14 +2,14 @@ from functools import wraps
 from time import time, sleep
 import warnings
 import sys # for verbose exception information
-import decorator # to maintain argspec (SO Question: 3729378)
+from inspect import getargspec
 
-@decorator.decorator
 def meta_func(ignore_errors=False):
 	_LogInfoDict = dict()
 	def decorating_function(user_function):
 		@wraps(user_function)
 		def wrapper(*args,**kwargs):
+			_LogInfoDict['argspec'] = getargspec(user_function)
 			_LogInfoDict['args'] = args if args else None
 			_LogInfoDict['kwargs'] = kwargs if kwargs else None
 			_LogInfoDict['error_info'] = None
