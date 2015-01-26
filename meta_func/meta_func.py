@@ -13,6 +13,7 @@ def meta_func(ignore_errors=False):
 			_LogInfoDict['args'] = args if args else None
 			_LogInfoDict['kwargs'] = kwargs if kwargs else None
 			_LogInfoDict['error_info'] = None
+			_LogInfoDict['func_name'] = user_function.__name__
 			with warnings.catch_warnings(record=True) as w:
 				_LogInfoDict['time_started'] = time()
 				warnings.simplefilter("always")
