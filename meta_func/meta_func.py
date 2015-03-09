@@ -4,6 +4,9 @@ import warnings
 import sys # for verbose exception information
 from inspect import getargspec
 
+def stringified_warnings(warn_list):
+	return [str(w) for w in warn_list]
+
 def meta_func(ignore_errors=False):
 	_LogInfoDict = dict()
 	def decorating_function(user_function):
@@ -24,7 +27,7 @@ def meta_func(ignore_errors=False):
 					_LogInfoDict['return_value'] = None
 				_LogInfoDict['time_ended'] = time()
 				_LogInfoDict['time_elapsed'] = round(_LogInfoDict['time_ended'] - _LogInfoDict['time_started'],6) # millionths of sec
-				_LogInfoDict['warnings'] = w if w else None
+				_LogInfoDict['warnings'] = stringified_warnings(w) if w else None
 				if ignore_errors is False and _LogInfoDict['error_info']:
 					raise _LogInfoDict['error_info'][0]
 			return _LogInfoDict['return_value']
