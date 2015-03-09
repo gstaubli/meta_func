@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='meta_func',
-    version='0.1.2',
+    version='0.1.3',
     author='Garren Staubli',
     author_email='gstaubli@gmail.com',
     packages=['meta_func'],
